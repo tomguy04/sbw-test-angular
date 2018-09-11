@@ -1,0 +1,10 @@
+<h2>Gmap test</h2> 
+<p>
+ There are two major deficiencies that should be addressed. <br><br>
+ 
+First, when picking a block there is a mismatch between the block that is selected and the block that is displayed in the map. This mismatch is caused by the delay inherent in the API call to look up the block data (simulated in this example). You can see the mismatch when looking at the console log. You will see something like "passed block is 160010021001017 returned geoid is 160010008042001."  The two values should match.<br><br>
+
+Second, the geoid10, intptlat10, intptlon10, blockarea should populate in the inputs below the map (Census Block, Block Latitude, Block Longitude, Block Area) after the block is selected.
+</p>
+
+<app-gmap></app-gmap>

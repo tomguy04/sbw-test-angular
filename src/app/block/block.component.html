@@ -1,0 +1,61 @@
+
+          <!-- Panel Body -->
+          <div class="panel-body scrollable-panel">
+              <div id="color-palette"></div>
+              <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+              <!-- Text Boxes and Other User Inputs.  -->
+              Diagnostic data: {{diagnostic}}
+              <form name="blockForm" class="form-inline" #blockForm="ngForm" novalidate>                 
+                          <div class="form-group">
+                              <label for="cataloger">Cataloger <span class="badge">From Login</span></label>
+                              <input type="text" class="form-control" id="cataloger" name="cataloger" placeholder="cataloger name" [(ngModel)]="model.cataloger" (blur)="saveBlock()" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="block">Census Block</label>
+                              <input type="text" class="form-control" id="block" name="block" [(ngModel)]="model.block" (blur)="saveBlock()" readonly required>
+                          </div>
+                          <div class="form-group">
+                              <label for="blocktype">Block Type</label>
+                                <select class="form-control"  [(ngModel)]="model.blocktype" id="blocktype" name="blocktype" (change) = "saveBlock()" >
+                                        <option *ngFor="let choice of blockTypes"  [value]="choice">{{choice}}</option>
+                                </select>                                
+                          </div>                          
+                          <div class="form-group">
+                              <label for="cbarea">Block Area</label>
+                              <input type="text" class="form-control" id="cbarea"  name="cbarea" [(ngModel)]="model.cbarea" readonly>
+                          </div>
+                          <div class="form-group">
+                              <label for="cblat">Block Latitude</label>
+                              <input type="text" class="form-control" id="cblat" name="cblat" [(ngModel)]="model.cblat" readonly>
+                          </div>
+                          <div class="form-group">
+                              <label for="cblon">Block Longitude</label>
+                              <input type="text" class="form-control" id="cblon" name="cblon" [(ngModel)]="model.cblon" readonly>
+                          </div>
+                          <div class="form-group">
+                            <label for="lights">Light Count</label>
+                            <input type="text" class="form-control" id="lights" name="lights" [(ngModel)]="model.lightcount">
+                        </div>
+                          <div class="form-group">
+                              <label for="notes">Notes</label>
+                              <textarea rows="3" class="form-control" id="blocknotes" name="blocknotes" placeholder="Notes" [(ngModel)]="model.notes" (blur)="saveBlock()"> </textarea>
+                          </div>
+
+                          <div class="form-group">
+                                <label for="blockstatus">Block Status</label>
+                                <select class="form-control"  [(ngModel)]="model.blockstatus" id="blockstatus" name="blockstatus" (change) = "saveBlock()" >
+                                        <option *ngFor="let choice of blockstatuses"  [value]="choice">{{choice}}</option>
+                                </select> 
+                        </div>                          
+                          <div class="form-group">
+                              <label for="blockqcer">QC Person</label>
+                              <input type="text" class="form-control" id="blockqcer" name="blockqcer" placeholder="QC Person" [(ngModel)]="model.qcer" (blur)="saveBlock()">
+                          </div>
+                          <div class="form-group">
+                              <label for="blockqcnotes">QC Notes</label>
+                              <textarea rows="3" class="form-control" id="blockqcnotes" name="blockqcnotes" placeholder="Notes" [(ngModel)]="model.qcnotes" (blur)="saveBlock()"> </textarea>
+                          </div>                  
+              </form>
+          </div>
+
+            

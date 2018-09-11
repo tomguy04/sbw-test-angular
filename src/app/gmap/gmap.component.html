@@ -1,0 +1,29 @@
+<app-censusblock (pickedBlock)="onPickedBlock($event)">
+
+</app-censusblock>
+
+
+
+
+<!-- Original Google map-->
+<!--<div #gmap style="width:100%;height:600px" ></div> -->
+<!-- Map and Side Panel -->
+<div class="row content">
+	<!-- Google Map -->
+	<div class="col-md-12">
+		<!--<div id="map" style="width:645px; height:645px"></div> -->
+		<!--  <div class="embed-responsive embed-responsive-16by9">  -->
+		<div class="embed-responsive embed-responsive-16by9">
+			<div #gmap style="width:100%;height:600px" class="embed-responsive-item"></div>
+		</div>
+		<!-- layer checkboxes-->
+		<div id="ToggleLayerBoxes">
+			<input type="checkbox" id="toggleBlocklayer" [(ngModel)]="toggleblocklayer" (change)="toggleBlockLayer()">Block <br>
+		</div>
+	</div>
+
+	<!-- Side Panel -->
+	<!-- <app-block [currentBlock]=pickedBlock></app-block> -->
+	<app-block (pickedBlock)="saveBlock(event)"></app-block>
+</div>
+
